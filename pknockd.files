@@ -1,0 +1,8 @@
+Makefile
+dictionary.c
+dictionary.h
+iniparser.c
+iniparser.h
+khash.h
+kvec.h
+pknockd.c
