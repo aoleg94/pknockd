@@ -19,6 +19,6 @@ $(NAME): $(OBJECTS)
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 clean:
-	rm -f *.o $(NAME)
+	rm -f *.o *.d $(NAME)
 
 include $(wildcard *.d)

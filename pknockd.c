@@ -334,8 +334,10 @@ static inline int check_ports_and_act(struct match_list* ml, const char* ipstr)
 			if(sec->seq[j] != m->port // port mismatch
 			||((m->ts - p->ts) > sec->seq_timeout)) // or large interval
 				goto next;
+			logf(LOG_DEBUG, "check: crap");
 		}
 		// got match
+		logf(LOG_INFO, "got match from %s, section '%s'!", ipstr, kh_key(cfg, i));
 
 		// flush match list, force sequence restart for client
 		memset(ml, 0, sizeof(*ml));
@@ -385,6 +387,7 @@ static inline int fire_stop_callback(struct stop_callback* scb)
 		}
 	}
 
+	logf(LOG_INFO, "running %s", cmd);
 	return system(cmd);
 }
 
