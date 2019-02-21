@@ -1,5 +1,7 @@
 *.o
 *.d
 pknockd
-*.user
+pknockd.debug
+pknockd.full
+*.user*
 
